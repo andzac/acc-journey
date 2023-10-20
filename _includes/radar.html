@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="http://zalando.github.io/tech-radar/release/radar-0.7.js"></script>
+</head>
+
+<body>
+
+    <svg id="radar"></svg>
+
+
+    <script>
+        radar_visualization({
+            svg_id: "radar",
+            width: 1440,
+            height: 1000,
+            colors: {
+                background: "#fff",
+                grid: "#bbb",
+                inactive: "#ddd"
+            },
+            title: "My Radar",
+            quadrants: [
+                { name: "Bottom Right" },
+                { name: "Diagrams" },
+                { name: "Metrics" },
+                { name: "Goal and priorities" }
+            ],
+            rings: [
+                { name: "ADOPTED", color: "#5ba300" },
+                { name: "TESTED", color: "#009eb0" },
+                { name: "STUDIED", color: "#c7ba00" },
+                { name: "DISCOVERED", color: "#e09b96" }
+            ],
+            print_layout: true,
+            links_in_new_tabs: true,
+            entries: [
+                //[GOAL AND PRIORITIES QUADRANT]
+                {
+                    label: "OKRs",
+                    quadrant: 3,          // 0,1,2,3 (counting clockwise, starting from bottom right)
+                    ring: 0,              // 0,1,2,3 (starting from inside)
+                    moved: 0             // -1 = moved out (triangle pointing down)
+                    //  0 = not moved (circle)
+                    //  1 = moved in  (triangle pointing up)
+                },
+                {
+                    label: "Customer development",
+                    quadrant: 3,
+                    ring: 3,
+                    moved: 0
+                    //  0 = not moved (circle)
+                    //  1 = moved in  (triangle pointing up)
+                },
+
+                //[METRICS QUADRANT]
+                {
+                    label: "Defect trends",
+                    quadrant: 2,
+                    ring: 1,
+                    moved: 0
+                },
+                {
+                    label: "Net Promoter score (NPS)",
+                    quadrant: 2,
+                    ring: 3,
+                    moved: 0
+                },
+                {
+                    label: "Customer usage index",
+                    quadrant: 2,
+                    ring: 3,
+                    moved: 0
+                },
+                {
+                    label: "Product cost ratio",
+                    quadrant: 2,
+                    ring: 3,
+                    moved: 0
+                },
+                {
+                    label: "Customer satisfation",
+                    quadrant: 2,
+                    ring: 3,
+                    moved: 0
+                },
+                {
+                    label: "Release frequency",
+                    quadrant: 2,
+                    ring: 3,
+                    moved: 0
+                },
+                {
+                    label: "Innovation rate",
+                    quadrant: 2,
+                    ring: 3,
+                    moved: 0
+                },
+                //[DIAGRAMS QUADRANT]
+                {
+                    label: "Kano Model",
+                    quadrant: 1,
+                    ring: 2,
+                    moved: 0
+                },
+                {
+                    label: "Impact analysis",
+                    quadrant: 1,
+                    ring: 2,
+                    moved: 0
+                },
+                {
+                    label: "Value proposition canvas",
+                    quadrant: 1,
+                    ring: 2,
+                    moved: 0
+                },
+                {
+                    label: "Business model",
+                    quadrant: 0,
+                    ring: 0,
+                    moved: 0
+                },
+                // ...
+            ]
+        });
+    </script>
+</body>
+
+</html>
